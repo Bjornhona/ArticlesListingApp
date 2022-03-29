@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Articles listing App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App that lists & filters articles using an API from NY Times.
 
 ## Available Scripts
 
