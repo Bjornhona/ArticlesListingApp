@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { getArticlesListing } from '../lib/articles-listing-service';
+import Image from './Image';
 
 const ArticlesList = () => {
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   const [listing, setListing] = useState();
   const [page, setPage] = useState(2);
   const [desk, setDesk] = useState();
@@ -29,7 +30,19 @@ const ArticlesList = () => {
   console.log(isLoading);
 
   return (
-    <div></div>
+    <div className='articles-list'>
+      {isLoading ? null : listing.docs.map(article => {
+        return (
+          <div key={article._id} className='article-list-item'>
+            <h1>{article.headline.main && article.headline.main}</h1>
+            <h3>{article.lead_paragraph && article.lead_paragraph}</h3>
+            <Image src={`https://www.nytimes.com/${article.multimedia[0].url}`} alt={article.multimedia[0].crop_name} />
+            <p>{article.abstract && article.snippet}</p>
+            <p>{article.byLine && article.byLine.original && article.byLine.original}</p>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 
