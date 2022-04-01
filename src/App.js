@@ -1,12 +1,10 @@
 import './App.css';
+import ArticlesList from './components/ArticlesList';
 
 function App() {
   return (
     <div>
-      <header>
-      </header>
-      <body>
-      </body>
+      <ArticlesList />
     </div>
   );
 }
