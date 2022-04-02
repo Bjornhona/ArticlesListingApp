@@ -1,0 +1,25 @@
+// PIXEL
+$XXXSpx: 3;
+$XXSpx: 5;
+$XSpx: 8;
+$Spx: 16;
+$Mpx: 32;
+$Lpx: 40;
+$XLpx: 64;
+$XXLpx: 140;
+$inner-cardpx: 186;
+$outer-cardpx: 218;
+$card-heightpx: 278;
+
+// EM
+$XXXS: ($XXXSpx / 16) * 1em;
+$XXS: ($XXSpx / 16) * 1em;
+$XS: ($XSpx / 16) * 1em;
+$S: ($Spx / 16) * 1em;
+$M: ($Mpx / 16) * 1em;
+$L: ($Lpx / 16) * 1em;
+$XL: ($XLpx / 16) * 1em;
+$XXL: ($XXLpx / 16) * 1em;
+$inner-card: ($inner-cardpx / 16) * 1em;
+$outer-card: ($outer-cardpx / 16) * 1em;
+$card-height: ($card-heightpx / 16) * 1em;

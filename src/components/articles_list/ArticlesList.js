@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { getArticlesListing } from '../lib/articles-listing-service';
-import Image from './Image';
+import { getArticlesListing } from '../../lib/articles-listing-service';
+import ArticleItem from '../article_item/ArticleItem';
+import './articlesList.scss';
 
 const ArticlesList = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,21 +28,16 @@ const ArticlesList = () => {
 
   console.log(listing && listing.meta)
   console.log(listing && listing.docs);
-  console.log(isLoading);
 
   return (
     <div className='articles-list'>
-      {isLoading ? null : listing.docs.map(article => {
-        return (
-          <div key={article._id} className='article-list-item'>
-            <h1>{article.headline.main && article.headline.main}</h1>
-            <h3>{article.lead_paragraph && article.lead_paragraph}</h3>
-            <Image src={`https://www.nytimes.com/${article.multimedia[0].url}`} alt={article.multimedia[0].crop_name} />
-            <p>{article.abstract && article.snippet}</p>
-            <p>{article.byLine && article.byLine.original && article.byLine.original}</p>
-          </div>
-        )
-      })}
+      <h1>The New Yourk Times</h1>
+      <nav></nav>
+      <div className='articles-list-container'>
+        {isLoading ? null : listing.docs.map(article => {
+          return <ArticleItem key={article._id} article={article} />
+        })}
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import './App.css';
-import ArticlesList from './components/ArticlesList';
+import './App.scss';
+import ArticlesList from './components/articles_list/ArticlesList';
 import {faImage} from '@fortawesome/free-regular-svg-icons';
 import {library} from '@fortawesome/fontawesome-svg-core';
 library.add(faImage);

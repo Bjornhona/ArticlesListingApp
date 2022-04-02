@@ -1,0 +1,13 @@
+@import '/src/App';
+
+nav {
+  height: $XL;
+  background-color: $ultra-dark-grey;
+}
+
+.articles-list {
+
+  &-container {
+    background-color: $ultra-light-grey;
+  }
+}

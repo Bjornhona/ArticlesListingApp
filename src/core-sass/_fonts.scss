@@ -1,0 +1,81 @@
+@import '/src/core-sass/sizes';
+
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+// Sans Pro
+
+@mixin Georgia-Regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin Georgia-Bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin Georgia-Black {
+  font-weight: 900;
+  font-style: normal;
+}
+
+h2, h3, h4, h5, p {
+  font-family: Georgia, Times, "Times New Roman", serif; 
+  margin: 0;
+}
+
+// New Yourk Times
+h1 {
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  font-size: em(46);
+  line-height: em(52);
+  color: $ultra-dark-grey;
+  text-align: center;
+}
+
+// headline
+h2 {
+  @include Georgia-Black;
+  font-size: em(16);
+  line-height: em(20);
+  // font-style: italic;
+  color: $ultra-dark-grey;
+}
+
+// button
+h3 {
+  @include Georgia-Black;
+  font-size: em(14);
+  line-height: em(18);
+  color: $ultra-dark-grey;
+  font-style: italic;
+}
+
+// news desk
+h4 {
+  @include Georgia-Bold;
+  font-size: em(12);
+  line-height: em(15);
+  color: $medium-grey;
+  text-transform: uppercase;
+}
+
+h5 {
+  @include Georgia-Bold;
+  font-size: em(12);
+  line-height: em(15);
+  color: $ultra-dark-grey;
+}
+
+// article
+p {
+  @include Georgia-Regular;
+  font-size: em(14);
+  line-height: em(18);
+  color: $dark-grey;
+}
