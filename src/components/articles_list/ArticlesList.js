@@ -4,6 +4,7 @@ import ArticleItem from '../article_item/ArticleItem';
 import './articlesList.scss';
 import loadingIcon from "../../commons/images/loadingIcon.svg";
 import PaginationBar from '../pagination/PaginationBar';
+import DeskFilterBar from '../desk_filter_bar/DeskFilterBar';
 
 const ArticlesList = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +16,7 @@ const ArticlesList = () => {
 
   // Search by keywords
   // News page with react router :id
+  // ev. redux
 
   const desksList = ['Sports', 'Arts', 'Business', 'Health', 'Technology', 'Style', 'Play', 'Politics']
 
@@ -37,18 +39,10 @@ const ArticlesList = () => {
 
   console.log(page)
 
-  const getClass = (d) => {
-    return desk === d ? 'active' : 'default';
-  }
-
   return (
     <div className='articles-list'>
       <h1>The New York Times</h1>
-      <nav>
-        <ul>
-          {desksList.map(d => <li className={getClass(d)} onClick={() => setDesk(d)}>{d}</li>)}
-        </ul>
-      </nav>
+      <DeskFilterBar desksList={desksList} desk={desk} setDesk={setDesk} />
       <div className='articles-list-container'>
         {isLoading
           ? <div className='articles-list-loading'>

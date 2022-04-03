@@ -5,6 +5,16 @@ nav {
   align-items: center;
   background-color: $ultra-dark-grey;
 
+  // mobile-view
+  select {
+    height: $L;
+    width: $outer-card;
+    margin: 0 auto;
+    background-color: $dark-grey;
+    color: $white;
+  }
+
+  // desktop-view
   ul {
     margin: 0;
     padding: 0;
@@ -12,10 +22,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
+    display: none;
 
     li {
       color: $white;
@@ -27,7 +34,7 @@ nav {
       cursor: pointer;
 
       &.active {
-        background-color: red;
+        background-color: $active;
       }
 
       &:hover {
@@ -39,7 +46,7 @@ nav {
 
 .articles-list {
   h1 {
-    padding: $S;
+    padding: $XXS;
   }
 
   &-container {
@@ -62,7 +69,30 @@ nav {
 }
 
 @media screen and (min-width: $width_xs) {
-  .articles-list-container {
-    padding-bottom: $XL;
+  .articles-list {
+    h1 {
+      padding: $S;
+    }
+
+    &-container {
+      padding-bottom: $XL;
+    }
+  }
+}
+
+@media screen and (min-width: $width_md) {
+  nav {
+    // mobile-view
+    select {
+      display: none;
+    }
+
+    // desktop-view
+    ul {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+    }
   }
 }
