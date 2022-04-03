@@ -1,0 +1,47 @@
+@import '/src/App';
+
+.pagination {
+  @include Center-Align;
+
+  .pagination-item {
+    background: $white;
+    border: 2px solid $dark-grey;
+    padding: $XS $S;
+    border-radius: 50%;
+    height: $L + $S;
+    width: $L + $S;
+    position: relative;
+    margin: 0 $XXS;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.active {
+      border: 1px solid $medium-grey;
+      color: $medium-grey;
+      pointer-events: none;
+    }
+  }
+
+  .prev,
+  .next {
+    background: $white;
+    border: none;
+    padding: $XS;
+    color: $link;
+    box-shadow: 0 0 $XXXS $darker-shadow;
+    margin: 0 $XS;
+    cursor: pointer;
+
+    &.disabled {
+      pointer-events: none;
+      box-shadow: none;
+      color: $disabled;
+    }
+  }
+}

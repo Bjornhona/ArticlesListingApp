@@ -9,5 +9,18 @@ nav {
 
   &-container {
     background-color: $ultra-light-grey;
+    min-height: calc(100vh - $XL*3 - $M - em(52));
+    padding: $M;
+    margin: 0 auto;
+    @include Center-Align;
+    flex-wrap: wrap;
+    gap: $XS;
+    text-align: center;
+    max-width: 1200px;
+  }
+
+  &-loading {
+    display: flex;
+    flex-direction: column;
   }
 }

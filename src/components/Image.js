@@ -1,13 +1,12 @@
-import React, {useState} from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React from "react";
 import placeholder from "../commons/images/placeholder.svg";
 
 const Image = ({article}) => {
-  const articleExists = article.multimedia && article.multimedia !== []
+  const articleExists = article.multimedia && article.multimedia.length > 0
   const src = (articleExists)
   ? `https://www.nytimes.com/${article.multimedia[0].url}`
   : placeholder;
-  const alt = article.multimedia ? article.multimedia[0].crop_name : 'no image';
+  const alt = articleExists ? article.multimedia[0].crop_name : 'no image';
 
   const onBrokenImage = (event) => {
     event.target.src = placeholder;

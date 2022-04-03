@@ -1,5 +1,53 @@
 @import '/src/App';
 
-.article-list-item {
+.article-item {
+  text-align: left;;
+  height: $card-height;
+  width: $outer-card;
+  padding: $S;
+  cursor: pointer;
+  border-radius: $XXS;
   background-color: $white;
+  box-shadow: 0px 3px 5px $shadow-color;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+  &:hover {
+    box-shadow: 0px 10px 20px 0px $hover-color;
+    border: 1px solid $ultra-dark-grey;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    height: $card-height - $XL + $S;
+    gap: $S;
+
+    p {
+      overflow: hidden;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: $XL + $S;
+
+    p {
+      text-align: right;
+    }
+  }
+
+  img {
+    min-height: $XXL;
+    height: $XXL;
+    width: $outer-card;
+    border-radius: $XXS $XXS 0 0;
+    object-fit: cover;
+  }
 }
