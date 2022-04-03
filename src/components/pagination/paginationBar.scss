@@ -6,12 +6,14 @@
   right: 0;
   bottom: 0;
   background: $white;
+  padding: $XXXS;
   @include Center-Align;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-areas: 
             "a a a"
             "b . c";
+  grid-row-gap: $XXS;
 
   &-group {
     display: flex;
@@ -61,7 +63,8 @@
     border: none;
     padding: $XS;
     box-shadow: 0 0 $XXXS $darker-shadow;
-    margin: $XXS $XS;
+    margin: 0 $XS;
+    // margin: $XXS $XS;
     cursor: pointer;
 
     h4 {
