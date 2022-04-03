@@ -1,47 +1,90 @@
 @import '/src/App';
 
 .pagination {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
   @include Center-Align;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas: 
+            "a a a"
+            "b . c";
 
-  .pagination-item {
-    background: $white;
-    border: 2px solid $dark-grey;
-    padding: $XS $S;
-    border-radius: 50%;
-    height: $L + $S;
-    width: $L + $S;
-    position: relative;
-    margin: 0 $XXS;
-    cursor: pointer;
+  &-group {
+    display: flex;
+    grid-area: a;
 
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    &-item {
+      background: $white;
+      border: 2px solid $dark-grey;
+      cursor: pointer;
+      border-radius: 50%;
+      position: relative;
+      padding: $XS $S;
+      height: $L + $S;
+      width: $L + $S;
+      margin: 0 $XXXS;
 
-    &.active {
-      border: 1px solid $medium-grey;
-      color: $medium-grey;
-      pointer-events: none;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &.active {
+        border: 1px solid $medium-grey;
+        pointer-events: none;
+
+        h2 {
+          color: $medium-grey;
+        }
+      }
     }
   }
 
-  .prev,
+  .prev {
+    grid-area: b;
+    justify-self: start;
+  }
+
   .next {
+    grid-area: c;
+    justify-self: end;
+  }
+
+  .prev, .next {
     background: $white;
     border: none;
     padding: $XS;
-    color: $link;
     box-shadow: 0 0 $XXXS $darker-shadow;
-    margin: 0 $XS;
+    margin: $XXS $XS;
     cursor: pointer;
+
+    h4 {
+      color: $link;
+    }
 
     &.disabled {
       pointer-events: none;
       box-shadow: none;
-      color: $disabled;
+
+      h4 {
+        color: $disabled;
+      }
     }
+  }
+}
+
+@media screen and (min-width: $width_xs) {
+  .pagination {
+    grid-template-areas: 
+          "b a c";
+  }
+  .pagination-item {
+    margin: 0 $XXS;
   }
 }

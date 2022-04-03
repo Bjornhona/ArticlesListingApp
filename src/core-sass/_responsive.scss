@@ -1,0 +1,17 @@
+$width_xxs: 320px;
+$width_xs: 576px;
+$width_md: 768px;
+$width_lg: 992px;
+$width_xl: 1200px;
+$width_xxl: 1400px;
+$width_xxxl: 1020px;
+
+:export {
+  width_xxs: calc($width_xxs / 1px);
+  width_xs: calc($width_xs / 1px);
+  width_md: calc($width_md / 1px);
+  width_lg: calc($width_lg / 1px);
+  width_xl: calc($width-xl / 1px);
+  width_xxl: calc($width_xxl / 1px);
+  width_xxxl: calc($width_xxxl / 1px);
+}

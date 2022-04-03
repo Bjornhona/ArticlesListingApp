@@ -37,9 +37,11 @@
     flex-direction: column;
     justify-content: flex-end;
     height: $XL + $S;
+    gap: $XXS;
+    text-align: right;
 
     p {
-      text-align: right;
+      color: $link;
     }
   }
 

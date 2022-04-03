@@ -6,12 +6,16 @@ nav {
 }
 
 .articles-list {
+  h1 {
+    padding: $S;
+  }
 
   &-container {
-    background-color: $ultra-light-grey;
+    background-color: $bg-color;
     min-height: calc(100vh - $XL*3 - $M - em(52));
     padding: $M;
     margin: 0 auto;
+    padding-bottom: $XL + $L;
     @include Center-Align;
     flex-wrap: wrap;
     gap: $XS;
@@ -22,5 +26,11 @@ nav {
   &-loading {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width: $width_xs) {
+  .articles-list-container {
+    padding-bottom: $XL;
   }
 }

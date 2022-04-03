@@ -3,7 +3,7 @@
 $browser-context: 16;
 
 @function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em;
+  @return #{calc($pixels/$context)}em;
 }
 
 // Sans Pro
@@ -28,12 +28,12 @@ h2, h3, h4, h5, p {
   margin: 0;
 }
 
-// New Yourk Times
+// New Yourk Times title
 h1 {
   font-family: 'EB Garamond', serif;
   margin: 0;
   font-size: em(46);
-  line-height: em(52);
+  line-height: em(23);
   color: $ultra-dark-grey;
   text-align: center;
 }
@@ -43,11 +43,10 @@ h2 {
   @include Georgia-Black;
   font-size: em(16);
   line-height: em(20);
-  // font-style: italic;
   color: $ultra-dark-grey;
 }
 
-// button
+// sub-title
 h3 {
   @include Georgia-Black;
   font-size: em(14);
@@ -56,7 +55,7 @@ h3 {
   font-style: italic;
 }
 
-// news desk
+// news desk & button
 h4 {
   @include Georgia-Bold;
   font-size: em(12);

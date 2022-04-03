@@ -28,24 +28,26 @@ const PaginationBar = ({page, setPage, totalPages}) => {
         onClick={goToPreviousPage}
         className={`prev ${page === 1 ? 'disabled' : ''}`}
       >
-        prev
+        <h4>prev</h4>
       </button>
 
-      {getPaginationGroup().map((item, index) => (
-        <button
-          key={index}
-          onClick={changePage}
-          className={`pagination-item ${page === item ? 'active' : null}`}
-        >
-          <span>{item}</span>
-        </button>
-      ))}
+      <div className="pagination-group">
+        {getPaginationGroup().map((item, index) => (
+          <button
+            key={index}
+            onClick={changePage}
+            className={`pagination-group-item ${page === item ? 'active' : null}`}
+          >
+            <span><h2>{item}</h2></span>
+          </button>
+        ))}
+      </div>
 
       <button
         onClick={goToNextPage}
         className={`next ${page === totalPages ? 'disabled' : ''}`}
       >
-        next
+        <h4>next</h4>
       </button>
     </div>
   )
