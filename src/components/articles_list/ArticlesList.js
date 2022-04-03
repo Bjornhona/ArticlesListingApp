@@ -13,7 +13,10 @@ const ArticlesList = () => {
   const [desk, setDesk] = useState();
   const [page, setPage] = useState(listing ? Math.round(totalPages / postsPerPage) : 1);
 
-  // const desksList = ['Sports', 'Arts', 'Business', 'Health & Fitness', 'Technology']
+  // Search by keywords
+  // News page with react router :id
+
+  const desksList = ['Sports', 'Arts', 'Business', 'Health', 'Technology', 'Style', 'Play', 'Politics']
 
   useEffect(() => {
     const getListing = async () => {
@@ -34,10 +37,18 @@ const ArticlesList = () => {
 
   console.log(page)
 
+  const getClass = (d) => {
+    return desk === d ? 'active' : 'default';
+  }
+
   return (
     <div className='articles-list'>
       <h1>The New York Times</h1>
-      <nav></nav>
+      <nav>
+        <ul>
+          {desksList.map(d => <li className={getClass(d)} onClick={() => setDesk(d)}>{d}</li>)}
+        </ul>
+      </nav>
       <div className='articles-list-container'>
         {isLoading
           ? <div className='articles-list-loading'>

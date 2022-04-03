@@ -1,8 +1,40 @@
 @import '/src/App';
 
 nav {
-  height: $XL;
+  display: flex;
+  align-items: center;
   background-color: $ultra-dark-grey;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+
+    li {
+      color: $white;
+      text-decoration: none;
+      padding: $S 0;
+      text-align: center;
+      -webkit-flex: 1 auto;
+      flex: 1 auto;
+      cursor: pointer;
+
+      &.active {
+        background-color: red;
+      }
+
+      &:hover {
+        background-color: $medium-grey;
+      }
+    }
+  }
 }
 
 .articles-list {
