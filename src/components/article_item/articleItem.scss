@@ -1,7 +1,8 @@
 @import '/src/App';
 
 .article-item {
-  text-align: left;;
+  text-align: left;
+  text-decoration: none;
   height: $card-height;
   width: $outer-card;
   padding: $S;

@@ -13,7 +13,7 @@ const ArticleItem = ({article}) => {
   });
 
   return (
-    <div className='article-item'>
+    <a href={article.web_url} className='article-item'>
       <div className='article-item-main'>
         <h4>{article.news_desk && article.news_desk}</h4>
         <Image article={article} />
@@ -26,7 +26,7 @@ const ArticleItem = ({article}) => {
         {/* <h5>{formatedDate} - {article.byline && article.byline.original && article.byline.original}</h5> */}
         <p>{'read more >>'}</p>
       </div>
-    </div>
+    </a>
   )
 }
 

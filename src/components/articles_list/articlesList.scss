@@ -1,49 +1,5 @@
 @import '/src/App';
 
-nav {
-  display: flex;
-  align-items: center;
-  background-color: $ultra-dark-grey;
-
-  // mobile-view
-  select {
-    height: $L;
-    width: $outer-card;
-    margin: 0 auto;
-    background-color: $dark-grey;
-    color: $white;
-  }
-
-  // desktop-view
-  ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    display: none;
-
-    li {
-      color: $white;
-      text-decoration: none;
-      padding: $S 0;
-      text-align: center;
-      -webkit-flex: 1 auto;
-      flex: 1 auto;
-      cursor: pointer;
-
-      &.active {
-        background-color: $active;
-      }
-
-      &:hover {
-        background-color: $medium-grey;
-      }
-    }
-  }
-}
-
 .articles-list {
   h1 {
     padding: $XXS;
@@ -76,23 +32,6 @@ nav {
 
     &-container {
       padding-bottom: $XL;
-    }
-  }
-}
-
-@media screen and (min-width: $width_md) {
-  nav {
-    // mobile-view
-    select {
-      display: none;
-    }
-
-    // desktop-view
-    ul {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-flow: row nowrap;
-      flex-flow: row nowrap;
     }
   }
 }

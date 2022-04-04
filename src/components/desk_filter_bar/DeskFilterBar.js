@@ -1,4 +1,5 @@
 import React from "react";
+import './deskFilterBar.scss';
 
 const DeskFilterBar = ({desksList, desk, setDesk}) => {
 
@@ -18,9 +19,10 @@ const DeskFilterBar = ({desksList, desk, setDesk}) => {
 
   return (
     <nav>
-      <select value={desk} onChange={handleChange}>
-        <option value={'no-value'}>None</option>)
-        {desksList.map(d => <option value={d}>{d}</option>)}
+      <select value={desk} onChange={handleChange} defaultValue={'DEFAULT'}>
+        <option value='DEFAULT' disabled hidden>Select desk...</option>
+        <option value={'no-value'}>All desks</option>)
+        {desksList.map(d => <option key={d} value={d}>{d}</option>)}
       </select>
       <ul>
         {desksList.map(d => <li key={d} className={getClass(d)} onClick={() => setDesk(d)}>{d}</li>)}
