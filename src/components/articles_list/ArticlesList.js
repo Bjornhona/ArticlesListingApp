@@ -5,6 +5,7 @@ import './articlesList.scss';
 import loadingIcon from "../../commons/images/loadingIcon.svg";
 import PaginationBar from '../pagination/PaginationBar';
 import DeskFilterBar from '../desk_filter_bar/DeskFilterBar';
+import Search from '../search/Search';
 
 const ArticlesList = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +14,7 @@ const ArticlesList = () => {
   const totalPages = listing ? listing.length : 0;
   const [desk, setDesk] = useState();
   const [page, setPage] = useState(listing ? Math.round(totalPages / postsPerPage) : 1);
+  const [text, setText] = useState('');
 
   // Search by keywords
   // News page with react router :id
@@ -23,9 +25,7 @@ const ArticlesList = () => {
   useEffect(() => {
     const getListing = async () => {
       try {
-        const result = await getArticlesListing(page, desk);
-        console.log(result.response.docs)
-        console.log(result.response.meta)
+        const result = await getArticlesListing(text, page, desk);
         setListing(result.response.docs);
         setIsLoading(false);
       }
@@ -35,13 +35,14 @@ const ArticlesList = () => {
     };
  
     getListing();
-  }, [page, desk]);
+  }, [text, page, desk]);
 
-  console.log(page)
+  // console.log(listing)
 
   return (
     <div className='articles-list'>
       <h1>The New York Times</h1>
+      <Search text={text} setText={setText} />
       <DeskFilterBar desksList={desksList} desk={desk} setDesk={setDesk} />
       <div className='articles-list-container'>
         {isLoading
@@ -49,9 +50,9 @@ const ArticlesList = () => {
               <img src={loadingIcon} alt='...loading' />
               <h3>...loading</h3>
             </div>
-          : listing.map(article => {
-            return <ArticleItem key={article._id} article={article} />
-          })
+          : listing.length === 0
+          ? <p>No hits</p>
+          : listing.map(article => <ArticleItem key={article._id} article={article} />)
         }
       </div>
 
