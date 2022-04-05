@@ -23,7 +23,6 @@ const ArticleItem = ({article}) => {
       </div>
       <div className='article-item-footer'>
         <h5>{formatedDate}</h5>
-        {/* <h5>{formatedDate} - {article.byline && article.byline.original && article.byline.original}</h5> */}
         <p>{'read more >>'}</p>
       </div>
     </a>

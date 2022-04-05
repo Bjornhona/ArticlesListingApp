@@ -1,7 +1,9 @@
 import React from "react";
 import './deskFilterBar.scss';
 
-const DeskFilterBar = ({desksList, desk, setDesk}) => {
+const DeskFilterBar = (props) => {
+  const {desk} = props;
+  const desksList = ['Sports', 'Arts', 'Business', 'Health', 'Technology', 'Style', 'Play', 'Politics']
 
   const getClass = (d) => {
     return desk === d ? 'active' : 'default';
@@ -11,9 +13,9 @@ const DeskFilterBar = ({desksList, desk, setDesk}) => {
     event.preventDefault();
     const selectedDesk = event.target.value;
     if (selectedDesk === 'no-value') {
-      setDesk();
+      props.setDesk();
     } else {
-      setDesk(selectedDesk);
+      props.setDesk(selectedDesk);
     }
   }
 
@@ -25,7 +27,7 @@ const DeskFilterBar = ({desksList, desk, setDesk}) => {
         {desksList.map(d => <option key={d} value={d}>{d}</option>)}
       </select>
       <ul>
-        {desksList.map(d => <li key={d} className={getClass(d)} onClick={() => setDesk(d)}>{d}</li>)}
+        {desksList.map(d => <li key={d} className={getClass(d)} onClick={() => props.setDesk(d)}>{d}</li>)}
       </ul>
     </nav>
   )
