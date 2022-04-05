@@ -7,3 +7,6 @@
 body {
   font-size: 16px;
 }
+
+input, select, button { box-sizing: border-box; } 
+*, *::before, *::after { box-sizing: inherit; }

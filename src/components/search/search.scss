@@ -1,0 +1,11 @@
+@import '/src/App';
+
+form {
+  @include Center-Align;
+  padding-bottom: $S;
+
+  input {
+    height: $L;
+    width: $outer-card;
+  }
+}

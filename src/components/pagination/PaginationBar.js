@@ -1,20 +1,21 @@
 import React from "react"
 import './paginationBar.scss';
 
-const PaginationBar = ({page, setPage, totalPages}) => {
+const PaginationBar = (props) => {
+  const {page, totalPages} = props;
   const pagesInPagination = 5;
 
   const goToNextPage = () => {
-    setPage((page) => page + 1);
+    props.setPage(page + 1);
   }
 
   const goToPreviousPage = () => {
-    setPage((page) => page - 1);
+    props.setPage(page - 1);
   }
 
   const changePage = (event) => {
     const pageNumber = Number(event.target.textContent);
-    setPage(pageNumber);
+    props.setPage(pageNumber);
   }
 
   const getPaginationGroup = () => {
