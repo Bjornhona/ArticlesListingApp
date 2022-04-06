@@ -14,6 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Responsive
 
 The page adapts to any screen size. All news cards are fixed sizes, and rescalable in App.scss body. The news desk bar transforms depending on screen width by using media queries.
+
 ![mobile view](./src/commons/images/mobile-screen-view.png)
 ![iPad view](./src/commons/images/ipad-screen-view.png)
 ![full screen view](./src/commons/images/wide-screen-view.png)
