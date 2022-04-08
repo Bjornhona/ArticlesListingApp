@@ -38,11 +38,20 @@
       }
 
       &.active {
-        border: 1px solid $medium-grey;
+        border: 1px solid $active;
         pointer-events: none;
 
         h2 {
-          color: $medium-grey;
+          color: $active;
+        }
+      }
+
+      &.disabled {
+        border: 1px solid $disabled;
+        pointer-events: none;
+  
+        h2 {
+          color: $disabled;
         }
       }
     }
@@ -64,7 +73,6 @@
     padding: $XS;
     box-shadow: 0 0 $XXXS $darker-shadow;
     margin: 0 $XS;
-    // margin: $XXS $XS;
     cursor: pointer;
 
     h4 {

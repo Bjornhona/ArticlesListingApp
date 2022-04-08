@@ -12,6 +12,7 @@ const DeskFilterBar = (props) => {
   const handleChange = (event) => {
     event.preventDefault();
     const selectedDesk = event.target.value;
+    props.setPage(1);
     if (selectedDesk === 'no-value') {
       props.setDesk();
     } else {

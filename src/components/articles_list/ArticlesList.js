@@ -7,7 +7,7 @@ import DeskFilterBar from '../desk_filter_bar/DeskFilterBarContainer';
 import Search from '../search/SearchContainer';
 
 const ArticlesList = (props) => {
-  const {listing, isLoading} = props;
+  const {docs, isLoading} = props;
 
   return (
     <div className='articles-list'>
@@ -20,9 +20,9 @@ const ArticlesList = (props) => {
               <img src={loadingIcon} alt='...loading' />
               <h3>...loading</h3>
             </div>
-          : listing.length === 0
+          : docs.length === 0
           ? <p>No hits</p>
-          : listing.map(article => <ArticleItem key={article._id} article={article} />)
+          : docs.map(article => <ArticleItem key={article._id} article={article} />)
         }
       </div>
 

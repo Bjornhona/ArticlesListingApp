@@ -1,19 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import './search.scss';
 
-const Search = ({text, setText}) => {
+const Search = (props) => {
+  const [input, setInput] = useState('');
 
   const handleChange = (event) => {
-    setText(event.target.value);
+    setInput(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.setPage(1);
+    props.setText(input);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         label="Search articles"
         type="text"
         name="text"
-        value={text}
+        value={input}
         onChange={handleChange}
         placeholder="Search..."
       />

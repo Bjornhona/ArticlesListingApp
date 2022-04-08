@@ -1,7 +1,7 @@
 import {bindActionCreators, compose} from "redux";
 import { connect } from "react-redux";
 import App from "./App";
-import * as actions from './redux/actions';
+import {setListing, setIsLoading} from './redux/actions';
 
 const mapStateToProps = (state) => {
   const {text, page, desk} = state;
@@ -9,6 +9,6 @@ const mapStateToProps = (state) => {
   return {text, page, desk}
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({setListing, setIsLoading}, dispatch)
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(App);

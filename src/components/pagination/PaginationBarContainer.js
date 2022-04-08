@@ -5,9 +5,10 @@ import PaginationBar from './PaginationBar';
 
 const mapStateToProps = (state) => {
   const {page, listing} = state;
-  const totalPages = listing ? listing.length : 0;
+  const totalPages = listing && listing.docs ? listing.docs.length : 0;
+  const meta = listing && listing.meta;
 
-  return {page, totalPages}
+  return {page, totalPages, meta}
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({setPage}, dispatch)

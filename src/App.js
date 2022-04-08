@@ -15,7 +15,7 @@ function App(props) {
 
       try {
         const result = await getArticlesListing(text, page, desk);
-        props.setListing(result.response.docs);
+        props.setListing(result.response);
         props.setIsLoading(false);
       }
       catch (error) {

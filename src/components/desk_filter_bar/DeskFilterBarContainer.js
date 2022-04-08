@@ -1,6 +1,6 @@
 import {bindActionCreators, compose} from "redux";
 import { connect } from "react-redux";
-import {setDesk} from '../../redux/actions';
+import {setDesk, setPage} from '../../redux/actions';
 import DeskFilterBar from './DeskFilterBar';
 
 const mapStateToProps = (state) => {
@@ -9,6 +9,6 @@ const mapStateToProps = (state) => {
   return {desk}
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({setDesk}, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({setDesk, setPage}, dispatch)
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(DeskFilterBar);
